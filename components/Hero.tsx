@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 export default function Hero() {
   return (
     <div className="h-screen flex flex-col items-center justify-center gap-4">
-      <nav className="navbar p-4 fixed top-0 left-0 w-full z-10">
+      <nav className="navbar p-4 fixed top-0 left-0 w-full z-10 bg-gradient-to-r from-gray-700 via-gray-900 to-black">
         <div className="container mx-auto">
           <div className="flex items-center justify-between">
             <a href="#" className="text-xl font-bold">
@@ -44,7 +44,7 @@ export default function Hero() {
           d&apos;Arhlène
         </span>
         <p className="text-2xl">
-          Plongez dans notre collection exclusives de livres numériques
+          Plongez dans notre collection exclusive de livres numériques
         </p>
 
         <div className="max-w-md mx-auto">

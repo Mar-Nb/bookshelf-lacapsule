@@ -4,8 +4,10 @@ import { config, library } from "@fortawesome/fontawesome-svg-core";
 import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
+  faArrowRight,
   faBook,
   faCartShopping,
+  faPlus,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
 
@@ -17,7 +19,7 @@ export const metadata: Metadata = {
   description: "Projet de La Capsule - Postgre et opérations CRUD",
 };
 
-library.add(faBook, faCartShopping, faSearch);
+library.add(faBook, faCartShopping, faSearch, faArrowRight, faPlus);
 
 export default function RootLayout({
   children,
