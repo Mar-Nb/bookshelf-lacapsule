@@ -6,12 +6,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 
 export default function Home() {
+  const reviews = Array.from({ length: 3 }, (_, i) => (
+    <Review key={i} text={`Review ${i}`} book={`Book ${i}`} name={"My name"} stars={0} />
+  ));
   return (
     <main className="flex flex-col text-white items-center gap-4 bg-gradient-to-r from-gray-700 via-gray-900 to-black">
       <Hero />
 
       <div className="flex flex-col gap-14 px-16 w-full">
-        <div className="flex gap-5 items-center">
+        <div className="flex gap-5 items-center justify-center">
           <div className="flex flex-col gap-4">
             <span className="text-2xl font-semibold">Meilleure vente</span>
             <span className="font-semibold">
@@ -37,7 +40,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="flex items-center justify-center gap-8">
+        <div className="flex items-center justify-center gap-20">
           <Image
             src="https://placehold.co/200x275/png"
             width={200}
@@ -69,8 +72,18 @@ export default function Home() {
           <BookCategory title="Category 2" desc="Description" />
         </div>
 
-        <div className="flex justify-center">
-          <div className="border border-white w-2/3" />
+        <div className="flex items-center justify-evenly gap-8">
+          <hr className="w-2/5" />
+          <h2>Review</h2>
+          <hr className="w-2/5" />
+        </div>
+
+        <div className="flex justify-center items-center">
+          <div className="border border-white">
+            <div className="flex items-center justify-center gap-8 p-4">
+              {reviews}
+            </div>
+          </div>
         </div>
       </div>
     </main>

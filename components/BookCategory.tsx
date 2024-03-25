@@ -17,7 +17,7 @@ export default function BookCategory({
         </div>
       </div>
 
-      <div className="flex text-black items-center justify-between px-4 py-2">
+      <div className="flex text-black items-center justify-between px-4 py-2 transition-all hover:font-bold">
         <Link href="#">
           Voir la catégorie{" "}
           <FontAwesomeIcon icon="arrow-right" className="pl-5" />

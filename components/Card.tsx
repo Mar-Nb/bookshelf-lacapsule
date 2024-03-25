@@ -20,7 +20,7 @@ export default function Card({
 
       <div className="flex items-center justify-between px-4 py-2">
         <p className="text-xl font-bold text-black">{price.toFixed(2)} €</p>
-        <button className="bg-gradient-to-r from-gray-700 via-gray-900 to-black text-white px-4 py-2 rounded-full">
+        <button className="bg-gradient-to-r from-gray-700 via-gray-900 to-black hover:from-gray-100 hover:via-gray-300 hover:to-gray-500 hover:text-black text-white px-4 py-2 rounded-full transition-all">
           <FontAwesomeIcon icon="plus" />
         </button>
       </div>
