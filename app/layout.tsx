@@ -5,8 +5,6 @@ import "./globals.css";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import {
   faArrowRight,
-  faBook,
-  faCartShopping,
   faPlus,
   faSearch,
 } from "@fortawesome/free-solid-svg-icons";
@@ -19,7 +17,7 @@ export const metadata: Metadata = {
   description: "Projet de La Capsule - Postgre et opérations CRUD",
 };
 
-library.add(faBook, faCartShopping, faSearch, faArrowRight, faPlus);
+library.add(faSearch, faArrowRight, faPlus);
 
 export default function RootLayout({
   children,
@@ -28,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={dmSans.className}>{children}</body>
+      <body className={`${dmSans.className} text-white items-center gap-4 bg-gradient-to-r from-gray-700 via-gray-900 to-black`}>{children}</body>
     </html>
   );
 }
