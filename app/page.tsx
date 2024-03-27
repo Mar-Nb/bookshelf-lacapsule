@@ -1,5 +1,6 @@
 import BookCategory from "@/components/BookCategory";
 import Card from "@/components/Card";
+import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import Review from "@/components/Review";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -7,7 +8,13 @@ import Image from "next/image";
 
 export default function Home() {
   const reviews = Array.from({ length: 3 }, (_, i) => (
-    <Review key={i} text={`Review ${i}`} book={`Book ${i}`} name={"My name"} stars={0} />
+    <Review
+      key={i}
+      text={`Review ${i}`}
+      book={`Book ${i}`}
+      name={"My name"}
+      stars={0}
+    />
   ));
   return (
     <main className="flex flex-col text-white items-center gap-4 bg-gradient-to-r from-gray-700 via-gray-900 to-black">
@@ -86,6 +93,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </main>
   );
 }
