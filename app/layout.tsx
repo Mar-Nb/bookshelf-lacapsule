@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr">
+    <html lang="fr" className="has-navbar-fixed-top">
       <body className={dmSans.className}>{children}</body>
     </html>
   );
