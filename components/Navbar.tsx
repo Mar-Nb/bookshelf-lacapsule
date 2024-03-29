@@ -41,9 +41,9 @@ export default function Navbar() {
         <div className="navbar-end">
           <div className="navbar-item">
             <button className="button">
-            <span className="icon">
-              <FontAwesomeIcon icon={faCartShopping} />
-            </span>
+              <span className="icon">
+                <FontAwesomeIcon icon={faCartShopping} />
+              </span>
             </button>
           </div>
         </div>
