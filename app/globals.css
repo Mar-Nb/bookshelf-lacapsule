@@ -1,1 +1,10 @@
 @import "bulma/css/bulma.css";
+
+.bold-hover {
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.bold-hover:hover {
+  font-weight: bolder;
+}
