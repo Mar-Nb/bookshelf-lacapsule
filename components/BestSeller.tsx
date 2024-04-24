@@ -15,7 +15,7 @@ export default function BestSeller() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch("/database/bestArticle/");
+      const res = await fetch("/database/book/bestArticle/");
       const json = await res.json();
 
       setArticle({

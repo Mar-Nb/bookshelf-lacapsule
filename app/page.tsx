@@ -2,7 +2,7 @@ import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import BestSeller from "@/components/BestSeller";
 import Image from "next/image";
-import CategoryCard from "@/components/CategoryCard";
+import HomeCategory from "@/components/HomeCategory";
 
 export default function Home() {
   return (
@@ -51,14 +51,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="columns is-centered">
-          <div className="column is-4">
-            <CategoryCard title="Category 1" desc="Description 1" />
-          </div>
-          <div className="column is-4">
-            <CategoryCard title="Category 2" desc="Description 2" />
-          </div>
-        </div>
+        <HomeCategory />
       </section>
 
       <section className="section has-text-centered">

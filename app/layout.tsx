@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 import { config, library } from "@fortawesome/fontawesome-svg-core";
-import { faArrowRight, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 config.autoAddCss = false;
 const dmSans = DM_Sans({ subsets: ["latin"] });
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "Projet de La Capsule - Postgres et opérations CRUD",
 };
 
-library.add(faArrowRight, faPlus);
+library.add(faPlus);
 
 export default function RootLayout({
   children,

@@ -1,3 +1,4 @@
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CategoryCard({
@@ -19,7 +20,7 @@ export default function CategoryCard({
         <div className="icon-text is-align-items-center pl-3 py-2">
           <span>Voir la catégorie</span>
           <span className="icon is-small">
-            <FontAwesomeIcon icon="arrow-right" />
+            <FontAwesomeIcon icon={faArrowRight} />
           </span>
         </div>
       </footer>
