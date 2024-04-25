@@ -16,7 +16,7 @@ export default function HomeReview() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch('/database/review/home');
+      const res = await fetch("/database/review/home");
       const json = await res.json();
 
       setReviews([...json]);
@@ -26,8 +26,11 @@ export default function HomeReview() {
   return (
     <div className="columns is-centered">
       {reviews &&
-        reviews.map((v, i) => (<div key={i} className="column is-one-third"><ReviewCard key={v.id} {...v} /></div>))
-      }
+        reviews.map((v, i) => (
+          <div key={i} className="column is-one-third">
+            <ReviewCard key={v.id} {...v} />
+          </div>
+        ))}
     </div>
   );
 }

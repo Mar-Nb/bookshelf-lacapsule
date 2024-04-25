@@ -17,7 +17,9 @@ export default function Card({
         <div className="content">{desc}</div>
       </div>
       <footer className="card-footer">
-        <button className="button is-primary is-fullwidth">Acheter</button>
+        <button className="button is-primary is-fullwidth bold-hover">
+          Acheter
+        </button>
       </footer>
     </div>
   );

@@ -27,7 +27,6 @@ export default function BestSeller() {
     })();
   }, []);
 
-
   return (
     <section className="section">
       <div className="columns is-vcentered">
