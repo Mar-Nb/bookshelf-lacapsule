@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import BestSeller from "@/components/BestSeller";
 import Image from "next/image";
 import HomeCategory from "@/components/HomeCategory";
+import HomeReview from "@/components/HomeReview";
 
 export default function Home() {
   return (
@@ -63,6 +64,8 @@ export default function Home() {
           <h2 className="is-size-5">Reviews</h2>
           <hr style={{ width: "35%" }} />
         </div>
+
+        <HomeReview />
       </section>
       <Footer />
     </main>
