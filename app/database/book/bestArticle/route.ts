@@ -1,10 +1,7 @@
-import { getConnection } from "@/libs/connection";
-
-let connection = getConnection();
+import { query } from "@/libs/db";
 
 export async function GET() {
-  const res = await connection.query(
-    `SELECT * FROM "${process.env.PG_SCHEMA}"."book" ORDER BY sold DESC LIMIT 1`,
-  );
-  return Response.json(res.rows[0]);
+  const res = await query("SELECT title, price, description FROM book ORDER BY sold DESC LIMIT 1");
+  const rows = res.rows.map((b) => ({ title: b.title, price: Number(b.price), description: b.description }));
+  return Response.json(rows[0]);
 }

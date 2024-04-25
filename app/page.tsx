@@ -57,7 +57,7 @@ export default function Home() {
 
       <section className="section has-text-centered">
         <div
-          className="is-flex is-align-items-center is-justify-content-center"
+          className="is-flex is-align-items-center is-justify-content-center mb-4"
           style={{ gap: 32 }}
         >
           <hr style={{ width: "35%" }} />

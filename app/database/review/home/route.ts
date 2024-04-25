@@ -1,18 +1,18 @@
-import { getConnection } from "@/libs/connection";
-
-let connection = getConnection();
+import { query } from "@/libs/db";
 
 export async function GET() {
-  const res = await connection.query(
-    `SELECT * FROM "${process.env.PG_SCHEMA}"."review" ORDER BY stars DESC LIMIT 3`,
-  );
-
+  const res = await query("SELECT * FROM review INNER JOIN book ON review.book = book.id ORDER BY stars DESC LIMIT 3");
   const rows = res.rows.map((v) => ({
     name: v.name,
     stars: v.stars,
     content: v.content,
-    book: v.book,
-    date: v.__created_time,
+    book: {
+      title: v.title,
+      price: v.price,
+      sold: v.sold,
+      description: v.description,
+      category: v.category
+    },
   }));
   return Response.json(rows);
 }

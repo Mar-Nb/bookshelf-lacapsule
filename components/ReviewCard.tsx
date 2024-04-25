@@ -18,7 +18,7 @@ export default function ReviewCard({
         <p className="card-header-title">{name}</p>
         <span className="card-header-icon">
           {
-            Array.from({ length: 5 }, (_, i) => <span className={`icon ${i < stars ? "has-text-warning" : ""}`}><FontAwesomeIcon icon={faStar} /></span>)
+            Array.from({ length: 5 }, (_, i) => <span key={i} className={`icon ${i < stars ? "has-text-warning" : ""}`}><FontAwesomeIcon icon={faStar} /></span>)
           }
         </span>
       </header>

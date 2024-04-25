@@ -12,7 +12,7 @@ export default function Hero() {
         >
           <p className="title has-text-centered">
             Découvrez des histoires extraordinaires dans les contrées
-            imaginaires d&apos;Arhlène
+            imaginaires d&apos;Arlhène
           </p>
           <p className="subtitle">
             Plongez dans notre collection exclusive de livres numériques

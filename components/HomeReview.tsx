@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 
 interface Review {
+  id: string;
   name: string;
   stars: number;
   content: string;
@@ -25,7 +26,7 @@ export default function HomeReview() {
   return (
     <div className="columns is-centered">
       {reviews &&
-        reviews.map((v, i) => (<div className="column is-one-third"><ReviewCard key={i} {...v} /></div>))
+        reviews.map((v, i) => (<div key={i} className="column is-one-third"><ReviewCard key={v.id} {...v} /></div>))
       }
     </div>
   );

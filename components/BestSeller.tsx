@@ -3,6 +3,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "./Card";
 import { useEffect, useState } from "react";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 interface Article {
   title: string;
@@ -26,6 +27,7 @@ export default function BestSeller() {
     })();
   }, []);
 
+
   return (
     <section className="section">
       <div className="columns is-vcentered">
@@ -34,7 +36,7 @@ export default function BestSeller() {
           <div className="icon-text">
             <span>Savourez cette histoire incroyable</span>
             <span className="icon">
-              <FontAwesomeIcon icon="arrow-right" />
+              <FontAwesomeIcon icon={faArrowRight} />
             </span>
           </div>
         </div>
