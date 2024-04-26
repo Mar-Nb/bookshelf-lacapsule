@@ -2,11 +2,7 @@
 
 import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
-
-interface Category {
-  title: string;
-  description: string;
-}
+import { Category } from "@/types/Category";
 
 export default function HomeCategory() {
   const [categories, setCategories] = useState<Category[]>();

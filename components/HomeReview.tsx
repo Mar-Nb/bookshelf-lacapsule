@@ -2,14 +2,7 @@
 
 import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
-
-interface Review {
-  id: string;
-  name: string;
-  stars: number;
-  content: string;
-  book: any;
-}
+import { Review } from "@/types/Review";
 
 export default function HomeReview() {
   const [reviews, setReviews] = useState<Review[]>();

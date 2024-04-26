@@ -1,15 +1,11 @@
 "use client";
 
 import Navbar from "@/components/Navbar";
+import { Category } from "@/types/Category";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-
-interface Category {
-  title: string;
-  description: string;
-}
 
 export default function CategoryListPage() {
   const [list, setList] = useState<Category[]>();

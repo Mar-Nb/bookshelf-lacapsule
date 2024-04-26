@@ -2,19 +2,9 @@
 
 import Card from "@/components/Card";
 import Navbar from "@/components/Navbar";
+import { Book } from "@/types/Book";
+import { Category } from "@/types/Category";
 import { useEffect, useState } from "react";
-
-interface Category {
-  title: string;
-  description: string;
-}
-
-interface Book {
-  id: string;
-  title: string;
-  price: number;
-  description: string;
-}
 
 export default function CategoryPage({
   params,

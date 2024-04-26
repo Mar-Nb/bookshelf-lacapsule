@@ -4,24 +4,19 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Card from "./Card";
 import { useEffect, useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
-
-interface Article {
-  title: string;
-  desc: string;
-  price: number;
-}
+import { Book } from "@/types/Book";
 
 export default function BestSeller() {
-  const [article, setArticle] = useState<Article>();
+  const [book, setBook] = useState<Book>();
 
   useEffect(() => {
     (async () => {
       const res = await fetch("/database/book/bestArticle/");
       const json = await res.json();
 
-      setArticle({
+      setBook({
         title: json.title,
-        desc: json.description,
+        description: json.description,
         price: json.price,
       });
     })();
@@ -41,15 +36,15 @@ export default function BestSeller() {
         </div>
 
         <div className="column">
-          {article && (
+          {book && (
             <Card
-              title={article.title}
-              desc={article.desc}
-              price={article.price}
+              title={book.title}
+              desc={book.description}
+              price={book.price}
             />
           )}
 
-          {!article && <progress className="progress is-small is-primary" />}
+          {!book && <progress className="progress is-small is-primary" />}
         </div>
       </div>
     </section>

@@ -1,3 +1,4 @@
+import { Book } from "@/types/Book";
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -10,7 +11,7 @@ export default function ReviewCard({
   name: string;
   stars: number;
   content: string;
-  book: any;
+  book: Book;
 }) {
   return (
     <div className="card">
