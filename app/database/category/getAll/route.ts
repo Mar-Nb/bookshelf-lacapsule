@@ -1,11 +1,7 @@
-import { getConnection } from "@/libs/connection";
-
-let connection = getConnection();
+import { query } from "@/libs/db";
 
 export async function GET() {
-  const res = await connection.query(
-    `SELECT * FROM "${process.env.PG_SCHEMA}"."category"`,
-  );
+  const res = await query("SELECT * FROM category");
   const rows = res.rows.map((v) => ({
     title: v.title,
     description: v.description,
