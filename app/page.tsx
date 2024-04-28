@@ -18,8 +18,7 @@ export default function Home() {
             Des personnages hauts en couleurs
           </p>
           <p>
-            Apprenez en plus sur les personnages de l&apos;univers
-            d&apos;Arhlène
+            Apprenez en plus sur les personnages de l&apos;univers de Lagrith
           </p>
 
           <div className="columns is-centered mt-4">

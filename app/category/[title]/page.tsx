@@ -1,5 +1,6 @@
 "use client";
 
+import Breadcrumb from "@/components/Breadcrumb";
 import Card from "@/components/Card";
 import Navbar from "@/components/Navbar";
 import { Book } from "@/types/Book";
@@ -31,6 +32,7 @@ export default function CategoryPage({
       <Navbar />
 
       <main className="container pt-6">
+        {category && <Breadcrumb path={['Accueil', 'Catégories', category.title]} />}
         <section className="section has-background-primary">
           <h1 className="title has-text-black">{category?.title}</h1>
           <h2 className="subtitle has-text-grey-darker">

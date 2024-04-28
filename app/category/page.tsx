@@ -1,5 +1,6 @@
 "use client";
 
+import Breadcrumb from "@/components/Breadcrumb";
 import Navbar from "@/components/Navbar";
 import { Category } from "@/types/Category";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -24,6 +25,7 @@ export default function CategoryListPage() {
       <Navbar />
 
       <main className="container pt-6">
+        <Breadcrumb path={['Accueil', 'Catégories']} />
         <section className="section has-background-primary">
           <h1 className="title has-text-black">Catégories</h1>
           <h2 className="subtitle has-text-grey-darker">
