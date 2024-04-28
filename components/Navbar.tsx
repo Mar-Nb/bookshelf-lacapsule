@@ -4,12 +4,18 @@ import { faBook, faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
 import { useState } from "react";
+import CartModal from "./CartModal";
 
 export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsActive(!isActive);
+  };
+
+  const toggleCartModal = () => {
+    setIsCartOpen(!isCartOpen);
   };
 
   return (
@@ -58,12 +64,17 @@ export default function Navbar() {
           <div className="navbar-item">
             <button className="button">
               <span className="icon">
-                <FontAwesomeIcon icon={faCartShopping} />
+                <FontAwesomeIcon
+                  icon={faCartShopping}
+                  onClick={toggleCartModal}
+                />
               </span>
             </button>
           </div>
         </div>
       </div>
+
+      <CartModal isActive={isCartOpen} close={toggleCartModal} />
     </nav>
   );
 }
