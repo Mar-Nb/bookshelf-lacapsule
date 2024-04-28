@@ -7,7 +7,7 @@ export default function AboutPage() {
       <Navbar />
 
       <main className="container pt-6">
-        <Breadcrumb path={['Accueil', 'À propos']} />
+        <Breadcrumb path={["Accueil", "À propos"]} />
         <section className="section has-background-primary">
           <h1 className="title has-text-black">À propos de Bookshelf</h1>
           <h2 className="subtitle has-text-grey-darker">

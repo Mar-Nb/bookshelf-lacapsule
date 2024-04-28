@@ -25,7 +25,7 @@ export default function CategoryListPage() {
       <Navbar />
 
       <main className="container pt-6">
-        <Breadcrumb path={['Accueil', 'Catégories']} />
+        <Breadcrumb path={["Accueil", "Catégories"]} />
         <section className="section has-background-primary">
           <h1 className="title has-text-black">Catégories</h1>
           <h2 className="subtitle has-text-grey-darker">
@@ -37,8 +37,8 @@ export default function CategoryListPage() {
           <div className="columns">
             <div className="column">
               {list &&
-                list.map((c, i) => (
-                  <div key={i} className="card" title={c.description}>
+                list.map((c) => (
+                  <div key={c.id} className="card" title={c.description}>
                     <Link href={`/category/${encodeURI(c.title)}`}>
                       <header className="card-header">
                         <p className="card-header-title">{c.title}</p>

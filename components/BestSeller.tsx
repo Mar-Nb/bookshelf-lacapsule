@@ -1,10 +1,10 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Card from "./Card";
 import { useEffect, useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Book } from "@/types/Book";
+import BookCard from "./BookCard";
 
 export default function BestSeller() {
   const [book, setBook] = useState<Book>();
@@ -15,6 +15,7 @@ export default function BestSeller() {
       const json = await res.json();
 
       setBook({
+        id: json.id,
         title: json.title,
         description: json.description,
         price: json.price,
@@ -36,13 +37,7 @@ export default function BestSeller() {
         </div>
 
         <div className="column">
-          {book && (
-            <Card
-              title={book.title}
-              desc={book.description}
-              price={book.price}
-            />
-          )}
+          {book && <BookCard {...book} />}
 
           {!book && <progress className="progress is-small is-primary" />}
         </div>

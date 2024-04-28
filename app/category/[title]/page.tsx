@@ -1,7 +1,7 @@
 "use client";
 
+import BookCard from "@/components/BookCard";
 import Breadcrumb from "@/components/Breadcrumb";
-import Card from "@/components/Card";
 import Navbar from "@/components/Navbar";
 import { Book } from "@/types/Book";
 import { Category } from "@/types/Category";
@@ -32,7 +32,9 @@ export default function CategoryPage({
       <Navbar />
 
       <main className="container pt-6">
-        {category && <Breadcrumb path={['Accueil', 'Catégories', category.title]} />}
+        {category && (
+          <Breadcrumb path={["Accueil", "Catégories", category.title]} />
+        )}
         <section className="section has-background-primary">
           <h1 className="title has-text-black">{category?.title}</h1>
           <h2 className="subtitle has-text-grey-darker">
@@ -44,13 +46,9 @@ export default function CategoryPage({
           <div className="fixed-grid has-3-cols">
             <div className="grid">
               {books &&
-                books.map((b, i) => (
-                  <div key={i} className="cell">
-                    <Card
-                      title={b.title}
-                      price={b.price}
-                      desc={b.description}
-                    />
+                books.map((b) => (
+                  <div key={b.id} className="cell">
+                    <BookCard {...b} />
                   </div>
                 ))}
             </div>

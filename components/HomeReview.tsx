@@ -19,9 +19,9 @@ export default function HomeReview() {
   return (
     <div className="columns is-centered">
       {reviews &&
-        reviews.map((v, i) => (
-          <div key={i} className="column is-one-third">
-            <ReviewCard key={v.id} {...v} />
+        reviews.map((v) => (
+          <div key={v.id} className="column is-one-third">
+            <ReviewCard {...v} />
           </div>
         ))}
     </div>

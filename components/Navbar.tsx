@@ -62,12 +62,9 @@ export default function Navbar() {
 
         <div className="navbar-end">
           <div className="navbar-item">
-            <button className="button">
+            <button className="button" onClick={toggleCartModal}>
               <span className="icon">
-                <FontAwesomeIcon
-                  icon={faCartShopping}
-                  onClick={toggleCartModal}
-                />
+                <FontAwesomeIcon icon={faCartShopping} />
               </span>
             </button>
           </div>

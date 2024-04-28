@@ -19,9 +19,9 @@ export default function HomeCategory() {
   return (
     <div className="columns is-centered">
       {categories &&
-        categories.map((c, i) => (
-          <div key={i} className="column is-4">
-            <CategoryCard title={c.title} desc={c.description} />
+        categories.map((c) => (
+          <div key={c.id} className="column is-4">
+            <CategoryCard {...c} />
           </div>
         ))}
     </div>
