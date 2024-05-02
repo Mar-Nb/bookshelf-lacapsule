@@ -1,6 +1,19 @@
 import { Book } from "@/types/Book";
 
 export default function BookCard(book: Book) {
+  async function addToCart() {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/database/cart`, {
+      method: "POST",
+      body: JSON.stringify({
+        book: book.id,
+        copy: 1,
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
   return (
     <div className="card">
       <header className="card-header">
@@ -11,7 +24,10 @@ export default function BookCard(book: Book) {
         <div className="content">{book.description}</div>
       </div>
       <footer className="card-footer">
-        <button className="button is-primary is-fullwidth bold-hover">
+        <button
+          className="button is-primary is-fullwidth bold-hover"
+          onClick={addToCart}
+        >
           Acheter
         </button>
       </footer>
