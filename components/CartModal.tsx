@@ -1,9 +1,10 @@
 "use client";
 
-import { Cart } from "@/types/Cart";
+import { Article } from "@/types/Cart";
 import { faHandHoldingDollar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
+import CartArticle from "./CartArticle";
 
 interface CartModalProps {
   isActive: boolean;
@@ -11,7 +12,7 @@ interface CartModalProps {
 }
 
 export default function CartModal(props: CartModalProps) {
-  const [cartItems, setCartItems] = useState<Cart[]>();
+  const [cartItems, setCartItems] = useState<Article[]>();
 
   useEffect(() => {
     (async () => {
@@ -19,8 +20,7 @@ export default function CartModal(props: CartModalProps) {
         `${process.env.NEXT_PUBLIC_BASE_URL}/database/cart`,
       );
       const json = await res.json();
-
-      console.log("cart", json);
+      setCartItems(json);
     })();
   }, []);
 
@@ -39,7 +39,8 @@ export default function CartModal(props: CartModalProps) {
 
         <section className="modal-card-body">
           <div className="container">
-            <p>Le panier est en cours de développement...</p>
+            {cartItems &&
+              cartItems.map((item) => <CartArticle key={item.id} {...item} />)}
           </div>
         </section>
 

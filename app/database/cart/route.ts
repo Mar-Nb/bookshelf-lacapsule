@@ -22,6 +22,8 @@ export async function POST(req: Request) {
 }
 
 export async function GET() {
-  const res = await query("SELECT id, book, copy FROM cart");
+  const res = await query(
+    "SELECT cart.id, book, copy, title, price, description FROM cart LEFT JOIN book ON cart.book = book.id",
+  );
   return Response.json(res.rows);
 }

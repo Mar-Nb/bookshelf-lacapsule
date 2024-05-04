@@ -3,3 +3,9 @@ export interface Cart {
   book: string;
   copy: number;
 }
+
+export interface Article extends Cart {
+  title: string;
+  price: number;
+  description: string;
+}
