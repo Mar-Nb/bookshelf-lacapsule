@@ -1,4 +1,5 @@
 import { query } from "@/libs/db";
+import { NextRequest } from "next/server";
 
 export async function POST(req: Request) {
   const payload = await req.json();
@@ -26,4 +27,10 @@ export async function GET() {
     "SELECT cart.id, book, copy, title, price, description FROM cart LEFT JOIN book ON cart.book = book.id",
   );
   return Response.json(res.rows);
+}
+
+export async function DELETE(req: NextRequest) {
+  const id = req.nextUrl.searchParams.get("id");
+  await query(`DELETE FROM cart WHERE id = '${id}'`);
+  return Response.json({ text: "Successfully deleted" });
 }
