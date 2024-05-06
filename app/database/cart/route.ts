@@ -34,3 +34,11 @@ export async function DELETE(req: NextRequest) {
   await query(`DELETE FROM cart WHERE id = '${id}'`);
   return Response.json({ text: "Successfully deleted" });
 }
+
+export async function PUT(req: Request) {
+  const payload = await req.json();
+  await query(
+    `UPDATE cart SET copy = ${payload.copy} WHERE id = '${payload.id}'`,
+  );
+  return Response.json({ text: "Number of copy successfully updated" });
+}

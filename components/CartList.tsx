@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import CartArticle from "./CartArticle";
 
 export default function CartList() {
-  const [cartItems, setCartItems] = useState<Article[]>();
+  const [cartItems, setCartItems] = useState<Article[]>([]);
 
   useEffect(() => {
     (async () => await fetchArticles())();
@@ -24,13 +24,26 @@ export default function CartList() {
       return;
     }
 
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/database/cart?id=${id}`,
-      { method: "DELETE" },
-    );
-    const json = await res.json();
-    console.log(json);
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/database/cart?id=${id}`, {
+      method: "DELETE",
+    });
     setCartItems(cartItems?.filter((item) => item.id !== id));
+  }
+
+  async function updateArticle(id: string, copy: number) {
+    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/database/cart`, {
+      method: "PUT",
+      body: JSON.stringify({ id, copy }),
+      headers: { "Content-Type": "application/json" },
+    });
+    const selectedIndex = cartItems.findIndex((item) => item.id === id);
+    const selectedArticle = cartItems[selectedIndex];
+    selectedArticle.copy = copy;
+
+    const duplicatedCart = [...cartItems];
+    duplicatedCart[selectedIndex] = selectedArticle;
+
+    setCartItems([...duplicatedCart]);
   }
 
   return (
@@ -41,6 +54,7 @@ export default function CartList() {
             key={item.id}
             article={item}
             delete={() => deleteArticle(item.id ?? "")}
+            update={(updatedValue) => updateArticle(item.id, updatedValue)}
           />
         ))}
     </div>
