@@ -18,7 +18,7 @@ export default function CategoryPage({
   useEffect(() => {
     (async () => {
       const res = await fetch(
-        `/database/category/getOne?title=${params.title}`,
+        `${process.env.NEXT_PUBLIC_BASE_URL}/database/category/getOne?title=${params.title}`,
       );
       const json = await res.json();
 

@@ -9,7 +9,7 @@ export default function HomeCategory() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch("/database/category/home");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/database/category/home`);
       const json = await res.json();
 
       setCategories([...json]);

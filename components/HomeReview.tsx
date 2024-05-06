@@ -9,7 +9,7 @@ export default function HomeReview() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch("/database/review/home");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/database/review/home`);
       const json = await res.json();
 
       setReviews([...json]);

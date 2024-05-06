@@ -13,7 +13,7 @@ export default function CategoryListPage() {
 
   useEffect(() => {
     (async () => {
-      const res = await fetch("/database/category/getAll");
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/database/category/getAll`);
       const json = await res.json();
 
       setList(json);
@@ -39,7 +39,7 @@ export default function CategoryListPage() {
               {list &&
                 list.map((c) => (
                   <div key={c.id} className="card" title={c.description}>
-                    <Link href={`/category/${encodeURI(c.title)}`}>
+                    <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/category/${encodeURI(c.title)}`}>
                       <header className="card-header">
                         <p className="card-header-title">{c.title}</p>
 

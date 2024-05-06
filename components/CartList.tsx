@@ -53,7 +53,7 @@ export default function CartList() {
           <CartArticle
             key={item.id}
             article={item}
-            delete={() => deleteArticle(item.id ?? "")}
+            delete={() => deleteArticle(item.id)}
             update={(updatedValue) => updateArticle(item.id, updatedValue)}
           />
         ))}

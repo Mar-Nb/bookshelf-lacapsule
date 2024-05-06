@@ -1,5 +1,6 @@
 import { faRocket } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="container has-text-centered">
         <p>
           <strong>Bookshelf</strong> by{" "}
-          <a href="https://github.com/Mar-Nb">Mar-Nb</a>.
+          <Link href="https://github.com/Mar-Nb">Mar-Nb</Link>.
         </p>
         <span className="icon-text">
           <span>Projet La Capsule - </span>
