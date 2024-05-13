@@ -2,7 +2,7 @@ import { Book } from "@/types/Book";
 
 export default function BookCard(book: Book) {
   async function addToCart() {
-    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/database/cart`, {
+    await fetch("/database/cart", {
       method: "POST",
       body: JSON.stringify({
         book: book.id,

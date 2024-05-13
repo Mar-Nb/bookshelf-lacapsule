@@ -12,9 +12,7 @@ export default function CartList() {
   }, []);
 
   async function fetchArticles() {
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/database/cart`,
-    );
+    const res = await fetch("/database/cart");
     const json = await res.json();
     setCartItems(json);
   }
@@ -24,14 +22,12 @@ export default function CartList() {
       return;
     }
 
-    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/database/cart?id=${id}`, {
-      method: "DELETE",
-    });
+    await fetch("/database/cart?id=${id}", { method: "DELETE" });
     setCartItems(cartItems?.filter((item) => item.id !== id));
   }
 
   async function updateArticle(id: string, copy: number) {
-    await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/database/cart`, {
+    await fetch("/database/cart", {
       method: "PUT",
       body: JSON.stringify({ id, copy }),
       headers: { "Content-Type": "application/json" },

@@ -13,7 +13,7 @@ export default function CategoryCard(category: Category) {
         <div className="content">{category.description}</div>
       </div>
       <footer className="card-footer has-background-primary bold-hover">
-        <Link href={`${process.env.NEXT_PUBLIC_BASE_URL}/category/${encodeURI(category.title)}`}>
+        <Link href={`/category/${encodeURI(category.title)}`}>
           <div className="icon-text has-text-black is-align-items-center pl-3 py-2">
             <span>Voir la catégorie</span>
             <span className="icon is-small">
