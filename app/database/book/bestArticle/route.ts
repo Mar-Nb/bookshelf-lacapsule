@@ -1,4 +1,4 @@
-import { query } from "@/libs/db";
+import { query } from "@/functions/db";
 
 export async function GET() {
   const res = await query(
