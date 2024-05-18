@@ -22,7 +22,7 @@ export default function CategoryPage({
 
       <main className="container pt-6">
         {data?.category && (
-          <Breadcrumb path={["Accueil", "Catégories", data?.category.title]} />
+          <Breadcrumb path={["", "category", data?.category.title]} />
         )}
         <section className="section has-background-primary">
           <h1 className="title has-text-black">{data?.category.title}</h1>

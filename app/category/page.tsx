@@ -8,7 +8,7 @@ export default function CategoryListPage() {
       <Navbar />
 
       <main className="container pt-6">
-        <Breadcrumb path={["Accueil", "Catégories"]} />
+        <Breadcrumb path={["", "category"]} />
         <section className="section has-background-primary">
           <h1 className="title has-text-black">Catégories</h1>
           <h2 className="subtitle has-text-grey-darker">

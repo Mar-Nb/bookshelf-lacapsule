@@ -39,7 +39,7 @@ export default function CartPage() {
       </nav>
 
       <main className="container pt-6">
-        <Breadcrumb path={["Accueil", "Panier"]} />
+        <Breadcrumb path={["", "cart"]} />
         <section className="section has-background-primary">
           <h1 className="title has-text-black">Panier</h1>
           <h2 className="subtitle has-text-grey-darker">
