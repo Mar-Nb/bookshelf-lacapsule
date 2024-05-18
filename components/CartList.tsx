@@ -44,7 +44,7 @@ export default function CartList() {
   function sumCart() {
     return cartItems
       .map((item) => item.price * item.copy)
-      .reduce((acc, val) => acc + val);
+      .reduce((acc, val) => acc + val, 0);
   }
 
   return (
