@@ -8,7 +8,10 @@ config.autoAddCss = false;
 const dmSans = DM_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Bookshelf - La Capsule",
+  title: {
+    template: "Bookshelf | %s",
+    default: "Bookshelf | La Capsule"
+  },
   description: "Projet de La Capsule - Postgres et opérations CRUD",
 };
 

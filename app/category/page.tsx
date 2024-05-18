@@ -1,6 +1,12 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import CategoryList from "@/components/CategoryList";
 import Navbar from "@/components/Navbar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Catégories",
+  description: "Retrouvez toutes les catégories de livres du projet Bookshelf !",
+};
 
 export default function CategoryListPage() {
   return (

@@ -2,7 +2,13 @@ import Breadcrumb from "@/components/Breadcrumb";
 import CartList from "@/components/CartList";
 import { faArrowLeft, faBook } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { Metadata } from "next";
 import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "Panier",
+  description: "Un panier, des livres, à la caisse !",
+};
 
 export default function CartPage() {
   return (

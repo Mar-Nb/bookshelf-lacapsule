@@ -1,5 +1,11 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import Navbar from "@/components/Navbar";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "À propos",
+  description: "En savoir un peu plus sur le projet Bookshelf",
+};
 
 export default function AboutPage() {
   return (
