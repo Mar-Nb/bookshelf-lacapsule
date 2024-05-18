@@ -6,8 +6,10 @@ export default function Breadcrumb({ path }: { path: string[] }) {
       key={step.toLowerCase()}
       className={i === path.length - 1 ? "is-active" : ""}
     >
-      { i === 0 && <Link href="/">{LINK[step]}</Link> }
-      { i !== 0 && <Link href={path.slice(0, i + 1).join("/")}>{LINK[step] ?? step}</Link>}
+      {i === 0 && <Link href="/">{LINK[step]}</Link>}
+      {i !== 0 && (
+        <Link href={path.slice(0, i + 1).join("/")}>{LINK[step] ?? step}</Link>
+      )}
     </li>
   ));
 
@@ -18,9 +20,9 @@ export default function Breadcrumb({ path }: { path: string[] }) {
   );
 }
 
-const LINK : Record<string, string> = {
+const LINK: Record<string, string> = {
   "": "Accueil",
-  "category": "Catégories",
-  "cart": "Panier",
-  "about": "À propos",
-}
+  category: "Catégories",
+  cart: "Panier",
+  about: "À propos",
+};

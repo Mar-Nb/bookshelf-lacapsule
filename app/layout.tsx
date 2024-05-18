@@ -10,7 +10,7 @@ const dmSans = DM_Sans({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: {
     template: "Bookshelf | %s",
-    default: "Bookshelf | La Capsule"
+    default: "Bookshelf | La Capsule",
   },
   description: "Projet de La Capsule - Postgres et opérations CRUD",
 };

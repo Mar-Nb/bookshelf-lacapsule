@@ -1,5 +1,6 @@
 import Breadcrumb from "@/components/Breadcrumb";
 import CartList from "@/components/CartList";
+import Footer from "@/components/Footer";
 import { faArrowLeft, faBook } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Metadata } from "next";
@@ -57,6 +58,8 @@ export default function CartPage() {
           <CartList />
         </section>
       </main>
+
+      <Footer />
     </>
   );
 }

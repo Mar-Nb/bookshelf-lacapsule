@@ -5,7 +5,8 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Catégories",
-  description: "Retrouvez toutes les catégories de livres du projet Bookshelf !",
+  description:
+    "Retrouvez toutes les catégories de livres du projet Bookshelf !",
 };
 
 export default function CategoryListPage() {
