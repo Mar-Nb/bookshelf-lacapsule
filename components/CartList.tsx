@@ -41,17 +41,32 @@ export default function CartList() {
     });
   }
 
+  function sumCart() {
+    return cartItems
+      .map((item) => item.price * item.copy)
+      .reduce((acc, val) => acc + val);
+  }
+
   return (
-    <div>
-      {cartItems &&
-        cartItems.map((item) => (
-          <CartArticle
-            key={item.id}
-            article={item}
-            delete={() => deleteArticle(item.id)}
-            update={(updatedValue) => updateArticle(item.id, updatedValue)}
-          />
-        ))}
-    </div>
+    <>
+      <div className="block">
+        {cartItems &&
+          cartItems.map((item) => (
+            <CartArticle
+              key={item.id}
+              article={item}
+              delete={() => deleteArticle(item.id)}
+              update={(updatedValue) => updateArticle(item.id, updatedValue)}
+            />
+          ))}
+      </div>
+
+      <div className="block">
+        <p className="is-size-5">
+          Total du panier :{" "}
+          <span className="has-text-weight-semibold">{sumCart()} €</span>
+        </p>
+      </div>
+    </>
   );
 }
