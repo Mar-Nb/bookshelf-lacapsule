@@ -3,18 +3,10 @@
 import { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 import { Review } from "@/types/Review";
+import useFetchData from "@/functions/useFetchData";
 
 export default function HomeReview() {
-  const [reviews, setReviews] = useState<Review[]>();
-
-  useEffect(() => {
-    (async () => {
-      const res = await fetch("/database/review/home");
-      const json = await res.json();
-
-      setReviews([...json]);
-    })();
-  }, []);
+  const reviews: Review[] = useFetchData("/database/review/home");
 
   return (
     <div className="columns is-centered">

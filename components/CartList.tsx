@@ -6,7 +6,7 @@ import CartArticle from "./CartArticle";
 
 export default function CartList() {
   const [cartItems, setCartItems] = useState<Article[]>([]);
-
+  
   useEffect(() => {
     (async () => await fetchArticles())();
   }, []);
@@ -22,7 +22,7 @@ export default function CartList() {
       return;
     }
 
-    await fetch("/database/cart?id=${id}", { method: "DELETE" });
+    await fetch(`/database/cart?id=${id}`, { method: "DELETE" });
     setCartItems(cartItems?.filter((item) => item.id !== id));
   }
 
@@ -32,14 +32,13 @@ export default function CartList() {
       body: JSON.stringify({ id, copy }),
       headers: { "Content-Type": "application/json" },
     });
-    const selectedIndex = cartItems.findIndex((item) => item.id === id);
-    const selectedArticle = cartItems[selectedIndex];
-    selectedArticle.copy = copy;
-
-    const duplicatedCart = [...cartItems];
-    duplicatedCart[selectedIndex] = selectedArticle;
-
-    setCartItems([...duplicatedCart]);
+    setCartItems(prevItems => {
+      const index = prevItems.findIndex(item => item.id === id);
+      const updatedItem = {...prevItems[index], copy };
+      const newItems = [...prevItems];
+      newItems[index] = updatedItem;
+      return newItems;
+    });
   }
 
   return (

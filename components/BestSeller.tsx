@@ -1,27 +1,13 @@
 "use client";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useEffect, useState } from "react";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { Book } from "@/types/Book";
 import BookCard from "./BookCard";
+import useFetchData from "@/functions/useFetchData";
 
 export default function BestSeller() {
-  const [book, setBook] = useState<Book>();
-
-  useEffect(() => {
-    (async () => {
-      const res = await fetch("/database/book/bestArticle/");
-      const json = await res.json();
-
-      setBook({
-        id: json.id,
-        title: json.title,
-        description: json.description,
-        price: json.price,
-      });
-    })();
-  }, []);
+  const book: Book = useFetchData("/database/book/bestArticle");
 
   return (
     <section className="section">

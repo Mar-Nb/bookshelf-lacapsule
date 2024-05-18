@@ -1,22 +1,13 @@
 "use client";
 
+import useFetchData from "@/functions/useFetchData";
 import { Category } from "@/types/Category";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function CategoryList() {
-  const [list, setList] = useState<Category[]>([]);
-
-  useEffect(() => {
-    (async () => {
-      const res = await fetch("/database/category/getAll");
-      const json = await res.json();
-
-      setList(json);
-    })();
-  }, []);
+  const list: Category[] = useFetchData("/database/category/getAll");
 
   return (
     <>

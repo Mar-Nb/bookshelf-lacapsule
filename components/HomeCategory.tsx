@@ -1,20 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
 import { Category } from "@/types/Category";
+import useFetchData from "@/functions/useFetchData";
 
 export default function HomeCategory() {
-  const [categories, setCategories] = useState<Category[]>();
-
-  useEffect(() => {
-    (async () => {
-      const res = await fetch("/database/category/home");
-      const json = await res.json();
-
-      setCategories([...json]);
-    })();
-  }, []);
+  const categories: Category[] = useFetchData("/database/category/home");
 
   return (
     <div className="columns is-centered">
