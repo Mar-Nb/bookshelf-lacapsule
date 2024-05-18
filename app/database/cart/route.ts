@@ -11,6 +11,7 @@ export async function POST(req: Request) {
     await query(
       `INSERT INTO cart (book, copy) VALUES ('${payload.book}', ${payload.copy})`,
     );
+
     return Response.json({ text: "Added to cart" });
   }
 
@@ -19,6 +20,7 @@ export async function POST(req: Request) {
   await query(
     `UPDATE cart SET copy = ${oldCopyNumber} + 1 WHERE book = '${inCartBook}'`,
   );
+
   return Response.json({ text: "Update copy number in cart" });
 }
 
@@ -26,12 +28,14 @@ export async function GET() {
   const res = await query(
     "SELECT cart.id, book, copy, title, price, description FROM cart LEFT JOIN book ON cart.book = book.id",
   );
+
   return Response.json(res.rows);
 }
 
 export async function DELETE(req: NextRequest) {
   const id = req.nextUrl.searchParams.get("id");
   await query(`DELETE FROM cart WHERE id = '${id}'`);
+
   return Response.json({ text: "Successfully deleted" });
 }
 
@@ -40,5 +44,6 @@ export async function PUT(req: Request) {
   await query(
     `UPDATE cart SET copy = ${payload.copy} WHERE id = '${payload.id}'`,
   );
+
   return Response.json({ text: "Number of copy successfully updated" });
 }

@@ -6,7 +6,7 @@ import CartArticle from "./CartArticle";
 
 export default function CartList() {
   const [cartItems, setCartItems] = useState<Article[]>([]);
-  
+
   useEffect(() => {
     (async () => await fetchArticles())();
   }, []);
@@ -32,9 +32,9 @@ export default function CartList() {
       body: JSON.stringify({ id, copy }),
       headers: { "Content-Type": "application/json" },
     });
-    setCartItems(prevItems => {
-      const index = prevItems.findIndex(item => item.id === id);
-      const updatedItem = {...prevItems[index], copy };
+    setCartItems((prevItems) => {
+      const index = prevItems.findIndex((item) => item.id === id);
+      const updatedItem = { ...prevItems[index], copy };
       const newItems = [...prevItems];
       newItems[index] = updatedItem;
       return newItems;

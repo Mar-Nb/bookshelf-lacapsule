@@ -5,9 +5,11 @@ export async function GET(req: NextRequest) {
   const category = decodeURI(
     req.nextUrl.searchParams.get("title") ?? "",
   ).toLowerCase();
+
   const searchedCategory = await query(
     `SELECT id, title, description FROM category WHERE LOWER(category.title) LIKE '${category}'`,
   );
+
   const id = searchedCategory.rows[0].id;
   const books = await query(
     `SELECT id, title, price, description FROM book WHERE category = '${id}'`,
